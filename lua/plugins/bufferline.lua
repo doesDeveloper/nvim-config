@@ -1,5 +1,6 @@
-return {
-	"akinsho/bufferline.nvim",
+return {
+	-- "akinsho/bufferline.nvim",
+	"Theyashsawarkar/bufferline.nvim",
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
