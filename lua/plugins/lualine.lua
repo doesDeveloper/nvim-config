@@ -15,7 +15,7 @@ return {
 					function()
 						return require("lsp-progress").progress()
 					end,
-					"encoding",
+					require("auto-session.lib").current_session_name,
 					"fileformat",
 					"filetype",
 				},
