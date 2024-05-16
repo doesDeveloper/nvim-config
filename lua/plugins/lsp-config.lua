@@ -11,7 +11,7 @@ return {
 			},
 		},
 	},
-
+	{ "folke/neodev.nvim", opts = {} },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
@@ -23,9 +23,17 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			require("neodev").setup({})
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
+						},
+					},
+				},
 				capabilities = capabilities,
 			})
 			lspconfig.tsserver.setup({
@@ -38,12 +46,12 @@ return {
 							runtimes = {
 								{
 									name = "JavaSE-17",
-									path = "/usr/lib/jvm/java-17-openjdk-amd64/", -- < path to Java 17 on Ubuntu
+									path = "C:/Program Files/Java/jdk-17", -- < path to Java 17 on Windows
 									default = true,
 								},
 								{
 									name = "JavaSE-1.8",
-									path = "/usr/lib/jvm/java-8-openjdk-amd64/jre", -- < path to Java 8 on Ubuntu
+									path = "C:/Program Files/Java/jdk1.8.0_202", -- < path to Java 8 on Windows
 								},
 							},
 						},
@@ -56,6 +64,7 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
+			vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 		end,
 	},

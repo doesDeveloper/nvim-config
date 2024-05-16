@@ -1,12 +1,13 @@
 return {
-	{
+	--[[ {
 		"j-hui/fidget.nvim",
 		opts = {
 			-- options
 		},
-	},
+	}, ]]
 	{
 		"linrongbin16/lsp-progress.nvim",
+		lazy = true,
 		config = function()
 			require("lsp-progress").setup({
 				client_format = function(client_name, spinner, series_messages)
@@ -27,7 +28,7 @@ return {
 					end
 
 					local sign = "" -- nf-fa-gear \uf013
-					local lsp_clients = vim.lsp.get_active_clients()
+					local lsp_clients = vim.lsp.get_clients()
 					local messages_map = {}
 					for _, climsg in ipairs(client_messages) do
 						messages_map[climsg.name] = climsg.body

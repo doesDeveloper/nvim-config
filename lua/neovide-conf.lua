@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h11"
+  vim.o.guifont = "JetBrainsMono Nerd Font:h10"
   vim.o.linespace = 2
   vim.g.neovide_transparency = 0.985
   vim.g.neovide_fullscreen = false
