@@ -46,7 +46,6 @@ return {
 						local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
 						local strings = vim.split(kind.kind, "%s", { trimempty = true })
 						kind.kind = " " .. (strings[1] or "") .. " "
-						--	kind.menu = "    [" .. (strings[2] or "") .. "]"
 
 						local symbols = {
 							buffer = "",
@@ -94,7 +93,6 @@ return {
 						cmp.config.compare.recently_used,
 						cmp.config.compare.score,
 						require("cmp-under-comparator").under,
-						-- cmp.config.compare.kind,
 						cmp.config.compare.offset,
 						cmp.config.compare.order,
 					},

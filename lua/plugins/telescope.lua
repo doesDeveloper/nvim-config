@@ -20,6 +20,12 @@ return {
 		end,
 	},
 	{
+		"nvim-telescope/telescope-dap.nvim", -- telescope integration with dap
+		config = function()
+			require("telescope").load_extension("dap")
+		end,
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.6",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -42,6 +48,7 @@ return {
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 			vim.keymap.set("n", "<leader>fp", require("telescope").extensions.projects.projects, {})
+			vim.keymap.set("n", "<leader>fc", require("telescope").extensions.dap.configurations, {})
 		end,
 	},
 }

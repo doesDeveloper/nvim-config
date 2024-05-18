@@ -1,6 +1,5 @@
 return {
-	"nvim-java/nvim-java",
-	lazy = true,
+	--[[ "nvim-java/nvim-java",
 	dependencies = {
 		"nvim-java/lua-async-await",
 		"nvim-java/nvim-java-refactor",
@@ -21,6 +20,6 @@ return {
 		},
 	},
 	config = function()
-		require("java").setup()
-	end,
+		require("java").setup({})
+	end, ]]
 }

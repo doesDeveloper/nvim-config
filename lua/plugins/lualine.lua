@@ -13,9 +13,14 @@ return {
 				lualine_c = { "filename" },
 				lualine_x = {
 					function()
-						return require("lsp-progress").progress()
+						local lsp_clients = vim.lsp.get_clients()
+						local client_names = {}
+						for _, client in ipairs(lsp_clients) do
+							table.insert(client_names, client.name)
+						end
+						return " " .. table.concat(client_names, ", ")
 					end,
-					require("auto-session.lib").current_session_name,
+					-- require("auto-session.lib").current_session_name,
 					"fileformat",
 					"filetype",
 				},

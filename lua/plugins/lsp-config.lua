@@ -39,25 +39,25 @@ return {
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.jdtls.setup({
+			--[[ lspconfig.jdtls.setup({
 				settings = {
 					java = {
 						configuration = {
 							runtimes = {
 								{
 									name = "JavaSE-17",
-									path = "C:/Program Files/Java/jdk-17", -- < path to Java 17 on Windows
-									default = true,
+									path = "C:\\Program Files\\Java\\jdk-17", -- < path to Java 17 on Windows
 								},
 								{
 									name = "JavaSE-1.8",
-									path = "C:/Program Files/Java/jdk1.8.0_202", -- < path to Java 8 on Windows
+									path = "C:\\Program Files\\Java\\jdk1.8.0_202", -- < path to Java 8 on Windows
+									default = true,
 								},
 							},
 						},
 					},
 				},
-			})
+			}) ]]
 
 			lspconfig.svelte.setup({ capabilities = capabilities })
 			lspconfig.tailwindcss.setup({ capabilities = capabilities })
