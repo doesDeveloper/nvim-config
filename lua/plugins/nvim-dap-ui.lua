@@ -14,7 +14,7 @@ return {
 	opts = {
 		controls = {
 			element = "repl",
-			enabled = false,
+			enabled = true,
 			icons = {
 				disconnect = "",
 				pause = "",
@@ -104,6 +104,8 @@ return {
 			-- require('dapui').close()
 		end
 
+		vim.keymap.set("n", "<leader>dx", require("dapui").close)
+		vim.keymap.set("n", "<leader>do", require("dapui").open)
 		-- Add dap configurations based on your language/adapter settings
 		-- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 		dap.configurations.java = {
@@ -132,7 +134,7 @@ return {
 				type = "java",
 				request = "launch",
 				mainClass = "GradleStart",
-				args = "-username=SnailIsBack " .. "--assetsDir=E:\\Launchers\\PollyMC\\assets",
+				args = "-username=SnailWasBack " .. "--assetsDir=E:\\Launchers\\PollyMC\\assets",
 				vmArgs = "" .. "-Xmx2g ",
 				cwd = "${workspaceFolder}/run",
 			},

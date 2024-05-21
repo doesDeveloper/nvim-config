@@ -1,6 +1,7 @@
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set relativenumber")
 vim.cmd("set number")
 
 vim.keymap.set("n", "<leader>sv", ":source $MYVIMRC<CR>")
@@ -12,8 +13,8 @@ vim.keymap.set({ "n", "i" }, "<C-s>", vim.cmd.w)
 
 vim.opt.termguicolors = true
 vim.opt.undofile = true
-vim.opt.termguicolors = true
-vim.opt.formatoptions:remove("o")
+vim.o.scrolloff = 8
+-- vim.opt.formatoptions:remove("o")
 
 vim.cmd("colorscheme catppuccin")
 

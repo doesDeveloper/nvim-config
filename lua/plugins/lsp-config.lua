@@ -58,7 +58,6 @@ return {
 					},
 				},
 			}) ]]
-
 			lspconfig.svelte.setup({ capabilities = capabilities })
 			lspconfig.tailwindcss.setup({ capabilities = capabilities })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

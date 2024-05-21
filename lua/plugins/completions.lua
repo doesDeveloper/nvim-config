@@ -98,9 +98,9 @@ return {
 					},
 				},
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp", priority = 8 },
+					{ name = "nvim_lsp", priority = 10 },
 					{ name = "luasnip", priority = 7 }, -- For luasnip users.
-					{ name = "buffer", priority = 7 },
+					{ name = "buffer", priority = 5 },
 					{ name = "path", priority = 7 },
 					{ name = "spell", keyword_length = 3, priority = 5, keyword_pattern = [[\w\+]] },
 					{ name = "treesitter", priority = 4 },
